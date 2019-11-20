@@ -2,7 +2,8 @@
 Define the deck of Cards
 '''
  # Import random and card modules
-import random
+from random import shuffle
+from card import Card
 class Deck():
     '''
     A deck of cards is a collection of 52 cards
@@ -40,7 +41,7 @@ class Deck():
         '''
         Shuffle the deck of cards
         '''
-        random.shuffle(self.deck)
+        shuffle(self.deck)
 
     def deal(self):
 
@@ -50,7 +51,7 @@ class Deck():
 
         self.shuffle_deck()
         dealt_card = self.deck.pop()
-        print('Dealt card is {}'.format(dealt_card))
+        #print('You have picked {}'.format(Card(dealt_card)))
         return dealt_card
 
 
@@ -62,11 +63,7 @@ class Deck():
         return '{}'.format(self.deck)
 
 '''
-...TEST...
 d = Deck()
 print(d)
-import card
-
-x = card.Card(d.deal())
-print(x)
+d.deal()
 '''
